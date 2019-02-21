@@ -17,7 +17,7 @@ public class gissa_rat {
 		boolean gissat = false;
 		
 		
-		slump = (int) (Math.random()*10);
+		slump = (int) (Math.random()*100)+1;
 		do  {
 			
 			
@@ -52,7 +52,7 @@ public class gissa_rat {
 			
 			if (val == 1) {
 				gissat = false;
-				slump = (int) (Math.random()*10);
+				slump = (int) (Math.random()*100)+1;
 				System.out.println("Gissa talet mellan 1 till 100");
 			}
 		
