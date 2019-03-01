@@ -17,7 +17,7 @@ public class gissa_rat {
 		boolean gissat = false;
 		int gissa = 0;
 		gissa = input.nextInt();
-		slump = (int) (Math.random() * gissa) + 1;
+		slump = 1 + (int)(Math.random() * ((gissa - 1) + 1));
 
 		do {
 			System.out.println("Talen är mellan 1 till " + gissa);
@@ -27,14 +27,14 @@ public class gissa_rat {
 
 				if (val < slump) {
 
-					System.out.println("Ditt tal " + val + " är mindre än talet X ");
+					System.out.println("Talet " + val + " är mindre än talet X ");
 					antal++;
 
 				}
 
 				else if (val > slump) {
 
-					System.out.println("Ditt tal " + val + " är större än talet X ");
+					System.out.println("Talet " + val + " är större än talet X ");
 					antal++;
 				}
 
@@ -46,7 +46,7 @@ public class gissa_rat {
 				}
 
 			}
-			System.out.println("vill du spela igen. 1: ja    2: nej");
+			System.out.println("Vill du spela igen. 1: ja    2: nej");
 			val = input.nextInt();
 
 			if (val == 1) {
@@ -55,7 +55,7 @@ public class gissa_rat {
 				antal = 0;
 				System.out.println("välj ett tal som är max på gissningsspelet");
 				gissa = input.nextInt();
-				slump = (int) (Math.random() * gissa) + 1;
+				slump = 1 + (int)(Math.random() * ((gissa - 1) + 1));
 
 			}
 
