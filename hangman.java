@@ -55,7 +55,7 @@ public class hangman_test {
 			if (life > 0) {
 
 				System.out.print(filler); // om inte hela ordter stämmer med string värdet så oktiveras denna delen då
-											// forsätter koden bara och vissar hur många liv som är kvar
+											// forsätter koden bara och vissar hur många liv som är kvar men också vissar den graffiska delen i consolen
 				System.out.println("     Life remaining " + life);
 				if (life == 6) {
 					System.out.println("  +---+ ");
@@ -151,8 +151,8 @@ public class hangman_test {
 					String word2 = x.next(); // ord som ska gissas
 					word = word2;
 					System.out.println("Enter how many lives the player will have");
-					life = 7;
-					guess(word, life);
+					life = 7; // liv
+					guess(word, life); // skickar iväg värderna
 				} else if (number == 3) {
 					System.out.println("Good bye");
 
@@ -167,20 +167,20 @@ public class hangman_test {
 					if (number2 == 3) {
 						String[] Words3 = {"entertaining", "separate", "ambiguous", "obtainable", "telephone", "sophisticated", };
 						int rNumber = 0;
-						rNumber = (int) (Math.random() * Words3.length) + 1; // kod som väljer ett ord från array listen
-						String secretWord = Words3[rNumber - 1]; // är får secretWord samma värde som ArrayWords
+						rNumber = (int) (Math.random() * Words3.length) + 1; 
+						String secretWord = Words3[rNumber - 1]; 
 						word = secretWord;
 					} else if (number2 == 2) {
 						String[] Words2 = {"reason", "absent", "famous", "flaky", "tiger", "juice", };
 						int rNumber = 0;
-						rNumber = (int) (Math.random() * Words2.length) + 1; // kod som väljer ett ord från array listen
-						String secretWord = Words2[rNumber - 1]; // är får secretWord samma värde som ArrayWords
+						rNumber = (int) (Math.random() * Words2.length) + 1; 
+						String secretWord = Words2[rNumber - 1]; 
 						word = secretWord;
 					} else {
 						String[] Words1 = { "sun", "soda", "dark", "size", "list", "town", };
 						int rNumber = 0;
-						rNumber = (int) (Math.random() * Words1.length) + 1; // kod som väljer ett ord från array listen
-						String secretWord = Words1[rNumber - 1]; // är får secretWord samma värde som ArrayWords
+						rNumber = (int) (Math.random() * Words1.length) + 1; 
+						String secretWord = Words1[rNumber - 1]; 
 						word = secretWord;
 					}
 					
@@ -199,7 +199,7 @@ public class hangman_test {
 	public static void main(String[] args) {
 		try {
 			Scanner z = new Scanner(System.in);
-			System.out.println("Do you want to chose the word type 1; Do you want to use a random word type 2;");
+			System.out.println("Do you want to chose the word type 1; Do you want to use a random word type 2;"); // här väljer man om man vill ha random ord eller välja eget
 			int number = z.nextInt();
 
 			if (number == 1) {
@@ -212,32 +212,32 @@ public class hangman_test {
 			}
 
 			else if (number == 2) {
-				System.out.println("select difficulty 1=easy 2=medium 3=hard ");
+				System.out.println("select difficulty 1=easy 2=medium 3=hard "); // om man väljer random så får man sedan frågan vilken svårighets grad spelet ska vara på
 
 				int number2 = z.nextInt();
-				String word;
+				String word; // aktiverar string word // tre olika arrayer
 				if (number2 == 3) {
 					String[] Words3 = {"entertaining", "separate", "ambiguous", "obtainable", "telephone", "sophisticated"};
 					int rNumber = 0;
 					rNumber = (int) (Math.random() * Words3.length) + 1; // kod som väljer ett ord från array listen
 					String secretWord = Words3[rNumber - 1]; // är får secretWord samma värde som ArrayWords
-					word = secretWord;
+					word = secretWord; // gör en array till string
 				} else if (number2 == 2) {
 					String[] Words2 = { "reason", "absent", "famous", "marble", "tiger", "juice",};
 					int rNumber = 0;
 					rNumber = (int) (Math.random() * Words2.length) + 1; // kod som väljer ett ord från array listen
 					String secretWord = Words2[rNumber - 1]; // är får secretWord samma värde som ArrayWords
-					word = secretWord;
+					word = secretWord;// gör en array till string
 				} else {
 					String[] Words1 = { "sun", "soda", "dark", "size", "list", "town", };
 					int rNumber = 0;
 					rNumber = (int) (Math.random() * Words1.length) + 1; // kod som väljer ett ord från array listen
 					String secretWord = Words1[rNumber - 1]; // är får secretWord samma värde som ArrayWords
-					word = secretWord;
+					word = secretWord;// gör en array till string
 				}
 
 				int life = 7;
-				guess(word, life);
+				guess(word, life); // skickar iväg värderna
 			}
 		} 
 		catch (Exception e) { // om man skriver in något annat får man ett meddelande om man har skrivt in fel
